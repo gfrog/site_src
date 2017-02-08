@@ -11,6 +11,10 @@ PATH = 'content'
 TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'zh'
+DEFAULT_DATE_FORMATS = '%F %T'
+
+FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})-(?P<slug>.*)'
+SLUGIFY_SOURCE = 'basename'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -18,6 +22,11 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+ARTICLE_URL = '{date:%Y}/{date:%m}/{slug}.html'
+ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{slug}.html'
+ARTICLE_LANG_URL = '{date:%Y}/{date:%m}/{slug}-{lang}.html'
+ARTICLE_LANG_SAVE_AS = '{date:%Y}/{date:%m}/{slug}-{lang}.html'
 
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["related_posts", "photos"]
